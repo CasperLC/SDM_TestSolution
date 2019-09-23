@@ -69,7 +69,45 @@ namespace SDM_Project.TDD_Exercise2
 
         public List<Shop> FilteredShops(int x, int y, int x2, int y2)
         {
-            throw new System.NotImplementedException();
+            List<Shop> filtered = new List<Shop>();
+            int pointX;
+            int pointY;
+            int pointX2;
+            int pointY2;
+
+            if (x < x2)
+            {
+                pointX = x;
+                pointX2 = x2;
+            }
+            else
+            {
+                pointX = x2;
+                pointX2 = x;
+            }
+
+            if(y < y2)
+            {
+                pointY = y;
+                pointY2 = y2;
+            } else
+            {
+                pointY = y2;
+                pointY2 = y;
+            }
+
+
+            foreach (var shop in Shops)
+            {
+                if((shop.gpsX>=pointX && shop.gpsX<=pointX2) && (shop.gpsY >= pointY && shop.gpsY <= pointY2))
+                {
+                    filtered.Add(shop);
+                }
+            }
+
+
+
+            return filtered;
         }
     }
 }

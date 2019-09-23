@@ -71,9 +71,37 @@ namespace SDM_ProjectTests
             shops.CreateShop(shopThree);
 
             Assert.AreEqual(shopOne,shops.AllShops(paramX,paramY).FirstOrDefault());
+        }
 
+        [TestMethod]
+        public void FilteredShops_Test()
+        {
+            var shops = new ShopCollection();
 
+            var shopOne = new Shop()
+            {
+                Address = "123",
+                Id = 1,
+                Name = "asdads",
+                Website = "www.123.com",
+                gpsX = 2,
+                gpsY = 2
+            };
+            var shopTwo = new Shop()
+            {
+                Address = "456",
+                Id = 2,
+                Name = "qweqwe",
+                Website = "www.456.com",
+                gpsX = 6,
+                gpsY = 6
+            };
 
+            shops.CreateShop(shopOne);
+            shops.CreateShop(shopTwo);
+
+            Assert.AreEqual(shopOne, shops.FilteredShops(1, 1, 4, 4).FirstOrDefault());
+            Assert.AreEqual(1, shops.FilteredShops(1, 1, 4, 4).Count);
         }
         
     }
