@@ -62,6 +62,24 @@ namespace SDM_ProjectTests
                 gpsX = 8,
                 gpsY = 8
             };
+            var shopFour = new Shop()
+            {
+                Address = "889",
+                Id = 4,
+                Name = "zxc3zxc",
+                Website = "www.7829.com",
+                gpsX = 10,
+                gpsY = 10
+            };
+            var shopFive = new Shop()
+            {
+                Address = "7989",
+                Id = 5,
+                Name = "z23xczxc",
+                Website = "www.78923.com",
+                gpsX = 12,
+                gpsY = 12
+            };
 
             var paramX = 1;
             var paramY = 1;
@@ -69,8 +87,12 @@ namespace SDM_ProjectTests
             shops.CreateShop(shopTwo);
             shops.CreateShop(shopOne);
             shops.CreateShop(shopThree);
+            shops.CreateShop(shopFive);
+            shops.CreateShop(shopFour);
 
             Assert.AreEqual(shopOne,shops.AllShops(paramX,paramY).FirstOrDefault());
+            Assert.AreEqual(shopThree,shops.AllShops(paramX,paramY)[2]);
+            Assert.AreEqual(shopFive, shops.AllShops(paramX,paramY)[4]);
         }
 
         [TestMethod]
