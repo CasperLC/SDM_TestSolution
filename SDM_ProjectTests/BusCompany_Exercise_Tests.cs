@@ -29,7 +29,7 @@ namespace SDM_ProjectTests
         }
 
         [TestMethod]
-        public void TotalCost100to500km_Test()
+        public void TotalCost100to499km_Test()
         {
             var bus = new BusCompany();
 
@@ -42,6 +42,18 @@ namespace SDM_ProjectTests
             Assert.AreEqual(450+130,actualCost1);
             //Assert with Below 12 Passengers
             Assert.AreEqual(412.5+130,actualCost2);
+        }
+
+        [TestMethod]
+        public void TotalCostAtOrAbove500km_Test()
+        {
+            var bus = new BusCompany();
+
+            //Kilometers at or above 500, rate is 2.25.
+            var actualCost = bus.TotalCost(0, 500);
+
+            //Assert with 500 or above kilometers
+            Assert.AreEqual(1125 + 130, actualCost);
         }
 
     }

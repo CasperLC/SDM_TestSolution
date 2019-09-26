@@ -22,6 +22,10 @@
                     return finalCost = (kilometer * 2.75) + initialFee;
                 }
             }
+            if (kilometer >= 500)
+            {
+                return finalCost = (kilometer * 2.25) + initialFee;
+            }
 
             return 0;
         }
