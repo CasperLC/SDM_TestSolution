@@ -2,6 +2,8 @@
 {
     public interface IBusCompany
     {
-        
+
+        double TotalCost(int noOfPassengers, int kilometer);
+
     }
 }
