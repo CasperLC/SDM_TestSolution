@@ -14,7 +14,7 @@ namespace SDM_Project.Exercose2_IsTeenager
             int dayCheck;
             if (today.Month > birthday.Month)
             {
-                dayCheck = 0;
+                dayCheck = 1;
             }
             else if (today.Month == birthday.Month && today.Day >= birthday.Day)
             {

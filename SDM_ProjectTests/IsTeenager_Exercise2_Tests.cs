@@ -102,6 +102,13 @@ namespace SDM_ProjectTests
             var upperYear = DateTime.Today.Year - 13;
             var upperMonth = DateTime.Today.Month;
             var upperDay = DateTime.Today.Day-1;
+            DateTime upperDay2;
+            if (!DateTime.TryParse((DateTime.Today.Day - 1).ToString(), out upperDay2))
+            {
+                upperDay = 30;
+                upperMonth = DateTime.Today.Month - 1;
+
+            }
 
             var birthday = DateTime.Parse($"{upperDay}/{upperMonth}/{upperYear}");
 
